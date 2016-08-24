@@ -1,4 +1,4 @@
-package li.koly
+package li.koly.macropractice
 
 import org.scalatest.FunSpec
 
