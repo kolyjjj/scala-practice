@@ -30,5 +30,30 @@ class FunctionPracticeTest extends FunSpec{
     it("should call a procedure") {
       FunctionPractice.aProcedure("This is a procedure")
     }
+
+    it("should call a default function") {
+      assert(FunctionPractice.defaultParameter(5, 10) == 50)
+      assert(FunctionPractice.defaultParameter(5) == 50)
+    }
+
+    it("should call a repeated parameter function") {
+      assert(FunctionPractice.repeatedParameters(3, 4) == 7)
+      assert(FunctionPractice.repeatedParameters(3) == 3)
+      assert(FunctionPractice.repeatedParameters(3, 4, 5) == 12)
+    }
+
+    describe("first class function") {
+      it("should call a val which is a function") {
+        assert(FunctionPractice.add2(3) == 5)
+      }
+
+      it("should consume a function as argument") {
+        assert(FunctionPractice.applyFunc(x => x + 4) == 5)
+        assert(FunctionPractice.applyFunc((x: Int) => x + 4) == 5)
+        assert(FunctionPractice.applyFunc(_ + 4) == 5)
+
+        assertDoesNotCompile("val one = (x: Int): Int = x + 1")
+      }
+    }
   }
 }
