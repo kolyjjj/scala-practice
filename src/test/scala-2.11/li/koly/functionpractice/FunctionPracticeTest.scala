@@ -40,6 +40,9 @@ class FunctionPracticeTest extends FunSpec{
       assert(FunctionPractice.repeatedParameters(3, 4) == 7)
       assert(FunctionPractice.repeatedParameters(3) == 3)
       assert(FunctionPractice.repeatedParameters(3, 4, 5) == 12)
+
+      val l = List(1,2,3)
+      assert(FunctionPractice.repeatedParameters(l: _*) == 6)
     }
 
     describe("first class function") {
@@ -54,6 +57,12 @@ class FunctionPracticeTest extends FunSpec{
 
         assertDoesNotCompile("val one = (x: Int): Int = x + 1")
       }
+
+      it("should call a closure") {
+        assert(FunctionPractice.aClosure(11) == 21)
+      }
+
+
     }
   }
 }

@@ -22,4 +22,7 @@ object FunctionPractice {
   val add2 = (x: Int) => x + 2
   def applyFunc(f: Int => Int) = f(1)
 
+  private val more = 10
+  def aClosure(x: Int) = x + more
+
 }
